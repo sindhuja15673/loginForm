@@ -67,14 +67,23 @@ h2 {
   font-size: 16px;
   color: #fff;
 }
+input:focus-within~label{
+  top: 10px;
+  transform: translateY(-120%);
+}
+input:user-valid~label{
+ 
+  transform: translateY(-150%);
+}
 
-.input-field input:focus~label,
+/* .input-field input:focus~label,
 .input-field input:valid~label {
   font-size: 0.8rem;
   top: 10px;
   transform: translateY(-120%);
+  
 }
-
+ */
 
 
 button {
