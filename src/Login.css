@@ -90,15 +90,9 @@ button {
   transition: 0.3s ease;
 }
 
-button:hover {
+button:enabled:hover{
   color: #fff;
   border-color: #fff;
   background: rgba(255, 255, 255, 0.15);
-}
-
-.register {
-  text-align: center;
-  margin-top: 30px;
-  color: #fff;
 }
 

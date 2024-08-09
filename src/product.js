@@ -16,23 +16,23 @@ const Product = () => {
                 <div><img src={pdt1}></img></div>
                 <h3>product1</h3>
             </div>
-            <div>
+            <div className='img'>
             <div><img src={pdt2}></img></div>
                 <h3>product2</h3>
             </div>
-            <div>
+            <div className='img'>
             <div><img src={pdt3}></img></div>
                 <h3>product3</h3>
             </div>
-            <div>
+            <div className='img'>
             <div><img src={pdt4}></img></div>
                 <h3>product4</h3>
             </div>
-            <div>
+            <div className='img'>
             <div><img src={pdt5}></img></div>
                 <h3>product4</h3>
             </div>
-            <div>
+            <div className='img'>
             <div><img src={pdt6}></img></div>
                 <h3>product5</h3>
             </div>
