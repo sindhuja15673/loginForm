@@ -1,0 +1,17 @@
+
+.product{
+    background-color: white !important;
+}
+.pdt{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+img{
+    width: 400px;
+    height: 400px;
+}
+.img{
+    width: 400px;
+    height: 450px;
+}
