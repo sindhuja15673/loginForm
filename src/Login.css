@@ -18,6 +18,10 @@ body {
   padding: 0 10px;
 }
 
+.error{
+  color: red;
+}
+
 
 
 .login {
@@ -76,14 +80,6 @@ input:user-valid~label{
   transform: translateY(-150%);
 }
 
-/* .input-field input:focus~label,
-.input-field input:valid~label {
-  font-size: 0.8rem;
-  top: 10px;
-  transform: translateY(-120%);
-  
-}
- */
 
 
 button {

@@ -6,6 +6,8 @@ const Login = ({onLogin}) => {
         userName: '',
         password: ''
     })
+
+    const [error, setError] = useState('');
     
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,6 +19,15 @@ const Login = ({onLogin}) => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+        const { userName, password } = loginForm;
+
+
+        if (userName !== 'admin' || password !== '12345678') {
+            setError('Invalid username or password.');
+            return;
+        }
+
+        setError('');
         onLogin();
     }
 
@@ -27,6 +38,7 @@ const Login = ({onLogin}) => {
         <div className='login'>
             <form className='form' onSubmit={handleSubmit} >
                 <h2>Login Form</h2>
+                {error && <p className='error'>{error}</p>}
                 <div className='input-field'>          
                     <input type='text' name='userName' value={userName} onChange={handleChange}>
                     </input>
