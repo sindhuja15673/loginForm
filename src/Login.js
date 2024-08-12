@@ -17,13 +17,48 @@ const Login = ({onLogin}) => {
         }));
     };
 
+     const validateUserName = (e) => {
+        const { value } = e.target;
+        if (value.length < 5 || value.length >15 ) {
+            setError('Username must be at least 8 characters long.');
+        } else  {
+            setError(''); 
+        }
+    };
+
+    const validatePassword = (password) => {
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        if (password.length < 6 || password.length > 6) {
+            return 'Password must be at least 6 characters long.';
+        }
+        if (!hasUpperCase) {
+            return 'Password must contain at least one uppercase letter.';
+        }
+        if (!hasLowerCase) {
+            return 'Password must contain at least one lowercase letter.';
+        }
+        if (!hasSymbol) {
+            return 'Password must contain at least one symbol.';
+        }
+        return '';
+    };
+
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         const { userName, password } = loginForm;
+        
 
-
-        if (userName !== 'admin' || password !== '12345678') {
-            setError('Invalid username or password.');
+        if (userName.length < 5 || userName.length > 15) {
+            setError('Username must be at least 8 characters long.');
+            return;
+        }
+         const passwordError = validatePassword(password);
+        if (passwordError) {
+            setError(passwordError);
             return;
         }
 
@@ -40,7 +75,7 @@ const Login = ({onLogin}) => {
                 <h2>Login Form</h2>
                 {error && <p className='error'>{error}</p>}
                 <div className='input-field'>          
-                    <input type='text' name='userName' value={userName} onChange={handleChange}>
+                    <input type='text' name='userName' value={userName} onChange={handleChange} onBlur={validateUserName}>
                     </input>
                     <label >UserName:</label>
                 </div>
